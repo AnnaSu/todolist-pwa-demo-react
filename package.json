@@ -1,0 +1,27 @@
+{
+  "name": "todolist-pwa-demo",
+  "version": "1.0.0",
+  "description": "Progressive Web App simple demo",
+  "main": "sw.js",
+  "scripts": {
+    "start": "concurrently --kill-others 'http-server' 'json-server --watch db.json'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnnaSu/todolist-pwa-demo.git"
+  },
+  "keywords": [
+    "PWA"
+  ],
+  "author": "AnnaSu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AnnaSu/todolist-pwa-demo/issues"
+  },
+  "homepage": "https://github.com/AnnaSu/todolist-pwa-demo#readme",
+  "devDependencies": {
+    "concurrently": "^3.1.0",
+    "http-server": "^0.9.0",
+    "json-server": "^0.9.4"
+  }
+}
