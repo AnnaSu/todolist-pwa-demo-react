@@ -3,6 +3,7 @@ const filesToCache = [
     '/index.html'
 ];
 const cacheName = 'todolist-v1';
+const dataCacheName = 'todolist-v1-data';
 
 // install
 self.addEventListener('install', event => {
@@ -14,3 +15,36 @@ self.addEventListener('install', event => {
         })
     );
 });
+
+// activate
+self.addEventListener('activate', event => {
+    console.log('now ready to handle fetches!');
+    event.waitUntil(
+        caches.keys().then(function(cacheNames) {
+            var promiseArr = cacheNames.map(function(item) {
+                if (item !== cacheName) {
+                    // Delete that cached file
+                    console.log('[ServiceWorker] Removing Cached Files from Cache - ', item);
+                    return caches.delete(item);
+                }
+            })
+            return Promise.all(promiseArr);
+        })
+    ); // end event.waitUntil
+})
+
+// fetch
+self.addEventListener('fetch', event => {
+    console.log('now fetch!');
+    event.respondWith(
+        caches.match(event.request).then(function (response) {
+            return response || fetch(event.request).then(res =>
+                caches.open(dataCacheName)
+                .then(function(cache) {
+                    cache.put(event.request, res.clone());
+                    return res;
+                })
+            );
+        })
+    );
+})
