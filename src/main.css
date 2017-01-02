@@ -1,0 +1,158 @@
+/* base css */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    background-color: #f2f2f2;
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Header */
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    padding: 0;
+    margin: 0;
+    background-color: #707477;
+}
+
+.logo {
+    margin-left: 60px;
+    vertical-align: middle;
+}
+
+.header .unfinish {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    color: white;
+}
+
+.header .unfinish .count {
+    margin-right: 10px;
+    vertical-align: middle;
+    font-size: 24px;
+    font-weight: bold;
+    color: #42F496;
+}
+
+.add {
+    width: 30px;
+    height: 30px;
+    margin-left: 60px;
+    vertical-align: sub;
+}
+
+.input-content {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background-color: white;
+}
+
+.input-content .input {
+    width: 70%;
+    height: 98px;
+    padding-left: 20px;
+    font-size: 24px;
+    border: 0;
+}
+
+.input-content .input:focus {
+    outline: none;
+}
+
+/* todolist */
+
+.list {
+    padding: 25px 0;
+    border: 1px solid #dddedf;
+}
+
+.finish {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+    margin-left: 60px;
+    background-image: url("../assets/images/btn_check.png");
+    cursor: pointer;
+}
+
+.del {
+    position: absolute;
+    right: 60px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url("../assets/images/btn_del.png");
+    cursor: pointer;
+}
+
+.list .unfinish {
+    width: 25px;
+    height: 25px;
+    margin-left: 60px;
+    margin-right: 20px;
+    display: inline-block;
+    border: 2px solid #42F496;
+    border-radius: 50%;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.finish-name {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: line-through;
+}
+
+.unfinish-name {
+    display: inline-block;
+    vertical-align: middle;
+}

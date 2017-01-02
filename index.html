@@ -2,22 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PWA Demo</title>
+    <title>PWA + To-Do List Demo</title>
+    <link rel="stylesheet" href="src/main.css">
 </head>
 <body>
-    <p> \{^_^}/ hi! This's PWA + To-Do List Demo. </p>
-    <ul id="list"></ul>
-    <script>
-        const list = document.getElementById('list');
-        fetch('http://localhost:3000/todolist')
-        .then(res => {
-            return res.json();
-        })
-        .then(json => {
-            list.innerHTML = json
-                            .map(item => `<li>${item.desc}</li>`)
-                            .join('');
-        })
-    </script>
+    <header class="header">
+        <img
+            class="logo"
+            src="./assets/images/logo_todo.png"
+            alt=""
+        />
+        <div class="unfinish">
+            <span class="count">0</span>
+            <span>個未完成</span>
+        </div>
+    </header>
+    <div class="input-content">
+        <img
+            class="add"
+            src="./assets/images/ic_add.png"
+            alt=""
+        />
+        <input
+            class="input"
+            placeholder="What need to be done?"
+            value=""
+            type="text"
+        />
+    </div>
+    <ul id="content" class="content">
+        <li class="list">
+             <a class="finish"></a>
+             <p class="finish-name">Finish Weekly Report</p>
+             <a class="del"></a>
+        </li>
+        <li class="list">
+             <a class="unfinish"></a>
+             <p class="unfinish-name">Making a Dinner Reservation</p>
+             <a class="del"></a>
+        </li>
+    </ul>
 </body>
 </html>
