@@ -146,13 +146,13 @@ table {
     cursor: pointer;
 }
 
-.finish-name {
+.list .finish + .desc {
     display: inline-block;
     vertical-align: middle;
     text-decoration: line-through;
 }
 
-.unfinish-name {
+.list .unfinish + .desc {
     display: inline-block;
     vertical-align: middle;
 }
