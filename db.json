@@ -2,6 +2,7 @@
   "todolist": [
     {
       "id": 0,
+      "isComplete": true,
       "desc": "Finish Weekly Report"
     }
   ]
