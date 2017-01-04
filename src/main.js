@@ -94,6 +94,9 @@
         // 點擊待辦事項內清單的項目及文字，觸發修改待辦事項的行為
         if (currentTarget && (currentTarget.matches('a.unfinished') || currentTarget.matches('a.finish') || currentTarget.matches('.desc'))) {
             toggleItem(parseInt(currentTarget.dataset.id, 10))
+        } else if (currentTarget && currentTarget.matches('a.del')) {
+            // 點擊待辦事項內的刪除 icon，觸發刪除待辦事項的行為
+            removeItem(parseInt(currentTarget.dataset.id, 10))
         }
     });
 
