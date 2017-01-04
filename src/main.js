@@ -55,6 +55,24 @@
             event.target.value = '';
         }
     });
+
+    // 修改待辦事項（PUT）
+    const toggleItem = id => {
+        const currentSelectItem = todoList.find(item => item.id === id);
+        // 切換『已完成』和『未完成』狀態
+        currentSelectItem.isComplete = !currentSelectItem.isComplete;
+        fetch(`http://localhost:3000/todolist/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(currentSelectItem)
+        })
+        .then(res => res.json())
+        .then(json => {
+            render(todoList);
+        })
+    }
     function render (todoList) {
         renderTodoList(todoList);
     }
