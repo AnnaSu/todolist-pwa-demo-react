@@ -27,6 +27,21 @@
         todoListDOM.innerHTML = html;
     }
 
+    // 新增待辦事項清單（POST）
+    const addItem = item => {
+        fetch('http://localhost:3000/todolist', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(item)
+        })
+        .then(res => res.json())
+        .then(json => {
+            todoList.push(json);
+            render(todoList);
+        })
+    }
     function render (todoList) {
         renderTodoList(todoList);
     }
