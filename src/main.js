@@ -74,6 +74,21 @@
         })
     }
 
+    // 刪除待辦事項 (DELETE)
+    const removeItem = id => {
+        fetch(`http://localhost:3000/todolist/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(json => {
+            todoList = todoList.filter(item => item.id !== id);
+            render(todoList);
+        })
+    }
+
     todoListDOM.addEventListener('click', event => {
         const currentTarget = event.target;
         // 點擊待辦事項內清單的項目及文字，觸發修改待辦事項的行為
