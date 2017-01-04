@@ -64,14 +64,14 @@ table {
     vertical-align: middle;
 }
 
-.header .unfinish {
+.header .unfinished {
     position: absolute;
     top: 0;
     right: 40px;
     color: white;
 }
 
-.header .unfinish .count {
+.header .unfinished .count {
     margin-right: 10px;
     vertical-align: middle;
     font-size: 24px;
@@ -134,7 +134,7 @@ table {
     cursor: pointer;
 }
 
-.list .unfinish {
+.list .unfinished {
     width: 25px;
     height: 25px;
     margin-left: 60px;
@@ -152,7 +152,7 @@ table {
     text-decoration: line-through;
 }
 
-.list .unfinish + .desc {
+.list .unfinished + .desc {
     display: inline-block;
     vertical-align: middle;
 }
