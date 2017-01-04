@@ -73,6 +73,15 @@
             render(todoList);
         })
     }
+
+    todoListDOM.addEventListener('click', event => {
+        const currentTarget = event.target;
+        // 點擊待辦事項內清單的項目及文字，觸發修改待辦事項的行為
+        if (currentTarget && (currentTarget.matches('a.unfinished') || currentTarget.matches('a.finish') || currentTarget.matches('.desc'))) {
+            toggleItem(parseInt(currentTarget.dataset.id, 10))
+        }
+    });
+
     function render (todoList) {
         renderTodoList(todoList);
     }
