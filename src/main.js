@@ -1,5 +1,5 @@
 (function (window, document) {
 
-    /* code */
+    const todoListDOM = document.getElementById('todoList');
 
 }(window, document));
