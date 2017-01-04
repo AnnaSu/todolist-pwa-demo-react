@@ -146,6 +146,10 @@ table {
     cursor: pointer;
 }
 
+.list .desc {
+    cursor: pointer;
+}
+
 .list .finish + .desc {
     display: inline-block;
     vertical-align: middle;
