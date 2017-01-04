@@ -1,6 +1,7 @@
 (function (window, document) {
 
     const todoListDOM = document.getElementById('todoList');
+    const todoInputDOM = document.getElementById('todoInput');
     let todoList = [];
 
     // 取得待辦事項清單（GET）
