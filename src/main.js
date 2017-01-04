@@ -42,6 +42,19 @@
             render(todoList);
         })
     }
+
+    const newItem = value => ({ desc: value, isComplete: false});
+    // const newItem = value => { return {name: value, isComplete: false} };
+
+    // 監聽輸入框的 keydown 事件
+    // 按下 Enter 後，給予待辦事項 isComplete 狀態並 addItem
+    // 最後清空輸入框
+    todoInputDOM.addEventListener('keydown', event => {
+        if (event.keyCode === 13 && event.target.value) {
+            addItem(newItem(event.target.value));
+            event.target.value = '';
+        }
+    });
     function render (todoList) {
         renderTodoList(todoList);
     }
