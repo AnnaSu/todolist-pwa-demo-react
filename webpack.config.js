@@ -13,6 +13,19 @@ module.exports = {
     filename: 'bundle.js',
   },
 
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015']
+      },
+      include: [
+        path.resolve(__dirname, './src/main.js')
+      ]
+    }]
+  },
+
   plugins: [
     new SWPrecacheWebpackPlugin(
       {
