@@ -5,7 +5,7 @@ module.exports = {
     'assets/images/**.*'
   ],
   runtimeCaching: [{
-    urlPattern: /this\\.is\\.a\\.regex/,
+    urlPattern: /^http:\/\/localhost:8080/,
     handler: 'networkFirst'
   }],
   swFile: 'sw-generated.js'
