@@ -3,6 +3,7 @@ var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = {
   context: __dirname,
+  devtool: '#eval-source-map',
 
   entry: {
     main: path.resolve(__dirname, './src/main.js'),
