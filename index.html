@@ -6,38 +6,7 @@
     <link rel="stylesheet" href="src/main.css">
 </head>
 <body>
-    <header class="header">
-        <img
-            class="logo"
-            src="./assets/images/logo_todo.png"
-            alt=""
-        />
-        <div class="unfinished">
-            <span class="count">0</span>
-            <span>個未完成</span>
-        </div>
-    </header>
-    <div id="todoInput" class="input-content">
-        <img
-            class="add"
-            src="./assets/images/ic_add.png"
-            alt=""
-        />
-        <input
-            class="input"
-            placeholder="What need to be done?"
-            value=""
-            type="text"
-        />
-    </div>
-    <ul id="todoList"></ul>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw-generated.js')
-            .then(reg => console.log('完成 SW 設定!', reg))
-            .catch(err => console.log('Error!', err));
-        }
-    </script>
     <script src="./src/main.js"></script>
+    <div id="root"></div>
 </body>
 </html>
