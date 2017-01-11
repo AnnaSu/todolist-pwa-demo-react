@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/AnnaSu/todolist-pwa-demo#readme",
   "devDependencies": {
+    "axios": "^0.15.3",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.18.0",
