@@ -17,7 +17,7 @@ export default class TodoListItem extends Component {
     }
 
 	render() {
-		const { isComplete, id, desc } = this.props;
+		const { isComplete, id, desc, delTodoList } = this.props;
 		return (
 			<li className="list">
                 <a
@@ -31,7 +31,11 @@ export default class TodoListItem extends Component {
                 >
                     { desc }
                 </p>
-                <a className="del"></a>
+                <a
+                    className="del"
+                    onClick={ () => { delTodoList(id); } }
+                >
+                </a>
             </li>
 		);
 	}

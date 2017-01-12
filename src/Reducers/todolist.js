@@ -3,6 +3,7 @@ const initialState = [];
 const RECEIVE_TODO = 'RECEIVE_TODO';
 const ADD_TODO = 'ADD_TODO';
 const TOGGLE_TODO = 'TOGGLE_TODO';
+const DEL_TODO = 'DEL_TODO';
 const URL = 'http://localhost:3000/';
 
 export function receiveTodoList (data) {
@@ -63,6 +64,19 @@ export function toggleTodoList (payload) {
         })
     }
 }
+
+export function delTodoList (id) {
+    return function(dispatch) {
+        return axios({
+            method: 'delete',
+            url: `${URL}todolist/${id}`,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => {
+            dispatch({type: DEL_TODO, id: id});
+        })
     }
 }
 
@@ -80,6 +94,8 @@ export default function todolist (state = initialState, action) {
             }
         })
         return [...state];
+    case DEL_TODO:
+        return state.filter(item => item.id !== action.id)
     default:
         return state;
     }
