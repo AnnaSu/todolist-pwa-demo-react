@@ -6,7 +6,7 @@ export default class TodoList extends Component {
         this.props.getTodoList();
     }
     render() {
-        const { todos } = this.props;
+        const { todos, toggleTodoList } = this.props;
         return (
             <ul id="todoList">
             {
@@ -17,6 +17,7 @@ export default class TodoList extends Component {
                             id={ item.id }
                             desc={ item.desc }
                             isComplete={ item.isComplete }
+                            toggleTodoList={ toggleTodoList }
                         />
                     )
                 })

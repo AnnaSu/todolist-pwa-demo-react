@@ -2,6 +2,7 @@ const axios = require('axios');
 const initialState = [];
 const RECEIVE_TODO = 'RECEIVE_TODO';
 const ADD_TODO = 'ADD_TODO';
+const TOGGLE_TODO = 'TOGGLE_TODO';
 const URL = 'http://localhost:3000/';
 
 export function receiveTodoList (data) {
@@ -44,6 +45,19 @@ export function addTodoList (value) {
             dispatch(receiveAddTodoList(res.data));
         })
         .catch(error => { console.log(error) })
+    }
+}
+
+export function toggleTodoList (payload, id) {
+    return function(dispatch) {
+        return axios({
+            method: 'put',
+            url: `${URL}todolist/${id}`,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: payload
+        })
     }
 }
 
