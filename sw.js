@@ -5,6 +5,7 @@ const filesToCache = [
     '/assets/images/ic_add.png',
     '/assets/images/logo_todo.png',
     '/src/main.css',
+    '/assets/bundle.js',
     '/index.html'
 ];
 const cacheName = 'todolist-v1';
