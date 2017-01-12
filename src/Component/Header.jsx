@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class Header extends Component {
+class Header extends Component {
     render () {
-        const { unfinished, addTodoList } = this.props;
+        const { unfinishedCount } = this.props;
         return (
             <header className="header">
                 <img
@@ -11,10 +12,17 @@ export default class Header extends Component {
                     alt=""
                 />
                 <div className="unfinished">
-                    <span className="count">0</span>
+                    <span className="count">{ unfinishedCount }</span>
                     <span>個未完成</span>
                 </div>
             </header>
         );
     }
 }
+
+export default connect(state => {
+    return {
+        unfinishedCount: state.todolist
+                        .filter((item)=>!item.isComplete).length
+    }
+})(Header);
