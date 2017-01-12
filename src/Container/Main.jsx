@@ -8,7 +8,6 @@ export default class Main extends Component {
             <div>
                 <Input />
                 <TodoListContainer />
-                Hi! This's PWA + React + Redux + To-Do List Demo.
             </div>
         );
     }

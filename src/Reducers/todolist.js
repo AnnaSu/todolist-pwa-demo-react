@@ -23,7 +23,7 @@ export default function todolist (state = initialState, action) {
     switch (action.type) {
     case RECEIVE_TODO:
         console.log('action:', action);
-        return state;
+        return action.data;
     default:
         return state;
     }

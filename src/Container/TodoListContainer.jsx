@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getTodoList } from '../Reducers/todolist.js';
 
 export default connect(state => ({
-    todolist: state.todolist
+    todos: state.todolist
 }), {
     getTodoList
 })(TodoList);
