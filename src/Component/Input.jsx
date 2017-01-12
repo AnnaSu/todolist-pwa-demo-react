@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
 export default class Input extends Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+            value: ''
+        }
+    }
+
     render() {
         return (
             <div id="todoInput" className="input-content">
@@ -12,8 +19,15 @@ export default class Input extends Component {
                 <input
                     className="input"
                     placeholder="What need to be done?"
-                    value=""
+                    value={ this.state.value }
                     type="text"
+                    onChange={
+                        (event) => {
+                            this.setState({
+                                value: event.target.value
+                            });
+                        }
+                    }
                 />
             </div>
         );
