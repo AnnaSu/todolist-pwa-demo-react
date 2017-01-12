@@ -48,16 +48,21 @@ export function addTodoList (value) {
     }
 }
 
-export function toggleTodoList (payload, id) {
+export function toggleTodoList (payload) {
     return function(dispatch) {
         return axios({
             method: 'put',
-            url: `${URL}todolist/${id}`,
+            url: `${URL}todolist/${payload.id}`,
             headers: {
                 'Content-Type': 'application/json'
             },
             data: payload
         })
+        .then(res => {
+            dispatch({type: TOGGLE_TODO, payload: payload});
+        })
+    }
+}
     }
 }
 
@@ -67,6 +72,13 @@ export default function todolist (state = initialState, action) {
         return action.data;
     case ADD_TODO:
         state.push(action.payload);
+        return [...state];
+    case TOGGLE_TODO:
+        state.forEach((item, index) => {
+            if (item.id === action.payload.id) {
+                state[index] = action.payload;
+            }
+        })
         return [...state];
     default:
         return state;
