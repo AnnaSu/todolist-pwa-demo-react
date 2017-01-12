@@ -9,6 +9,7 @@ export default class Input extends Component {
     }
 
     render() {
+        const { addTodoList } = this.props;
         return (
             <div id="todoInput" className="input-content">
                 <img
@@ -26,6 +27,15 @@ export default class Input extends Component {
                             this.setState({
                                 value: event.target.value
                             });
+                        }
+                    }
+                    onKeyDown={
+                        (event) => {
+                            if (event.keyCode === 13) {
+                                console.log('Enter');
+                                addTodoList(this.state.value);
+                                this.setState({value: ''})
+                            }
                         }
                     }
                 />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Input from '../Component/Input.jsx';
+import Input from './InputContainer.jsx';
 import TodoListContainer from './TodoListContainer.jsx';
 
 export default class Main extends Component {
