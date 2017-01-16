@@ -4,7 +4,7 @@
   "description": "Progressive Web App simple demo",
   "main": "sw.js",
   "scripts": {
-    "start": "concurrently --kill-others 'http-server' 'json-server --watch db.json'"
+    "start": "concurrently --kill-others 'webpack-dev-server --port 8000' 'json-server --watch db.json'"
   },
   "repository": {
     "type": "git",
