@@ -1,5 +1,4 @@
 var path = require('path');
-var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = {
   context: __dirname,
@@ -24,19 +23,5 @@ module.exports = {
       },
       exclude: /node_modules/
     }]
-  },
-
-  plugins: [
-    new SWPrecacheWebpackPlugin(
-      {
-        cacheId: 'app-images',
-        filepath: './sw-generated-webpack.js',
-        maximumFileSizeToCacheInBytes: 4194304,
-        runtimeCaching: [{
-          handler: 'cacheFirst',
-          urlPattern: /[.]png$/,
-        }],
-      }
-    ),
-  ]
+  }
 }
