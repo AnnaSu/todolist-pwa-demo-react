@@ -20,6 +20,8 @@
 ## Install
 
 ```
+git clone https://github.com/AnnaSu/todolist-pwa-demo-react.git
+cd todolist-pwa-demo-react
 npm install
 ```
 
