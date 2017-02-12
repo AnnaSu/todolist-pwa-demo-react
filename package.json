@@ -4,7 +4,8 @@
   "description": "PWA To-Do List with React/Redux",
   "main": "boot.js",
   "scripts": {
-    "start": "concurrently --kill-others 'webpack-dev-server --port 8000' 'json-server --watch db.json'"
+    "start": "concurrently --kill-others 'webpack-dev-server --port 8000' 'json-server --watch db.json'",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
