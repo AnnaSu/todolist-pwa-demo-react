@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
+import { Router, hashHistory } from 'react-router';
 import createStore from './Store/configureStore.js'
 import createRoutes from './Router/routing.js';
 
@@ -10,7 +10,7 @@ const routes = createRoutes(store);
 
 ReactDOM.render(
 <Provider store={ store }>
-    <Router history={ browserHistory }>
+    <Router history={ hashHistory }>
         { routes }
     </Router>
 </Provider>, document.getElementById('root'));
