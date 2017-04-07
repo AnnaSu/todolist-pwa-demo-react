@@ -33,7 +33,7 @@ module.exports = {
       maximumFileSizeToCacheInBytes: 4194304,
       minify: true,
       runtimeCaching: [{
-        handler: 'fastest',
+        handler: 'networkFirst',
         urlPattern: /^https:\/\/anna-todolist-api\.herokuapp\.com\//,
       }],
     }),
