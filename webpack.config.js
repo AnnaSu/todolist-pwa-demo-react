@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './assets'),
     filename: 'bundle.js',
-    publicPath: 'todolist-pwa-demo-react/assets/'
+    publicPath: '/todolist-pwa-demo-react/assets/'
   },
 
   module: {
