@@ -4,7 +4,7 @@ const RECEIVE_TODO = 'RECEIVE_TODO';
 const ADD_TODO = 'ADD_TODO';
 const TOGGLE_TODO = 'TOGGLE_TODO';
 const DEL_TODO = 'DEL_TODO';
-const URL = 'http://localhost:3000/';
+const URL = 'https://anna-todolist-api.herokuapp.com/';
 
 export function receiveTodoList (data) {
     return {
@@ -15,7 +15,7 @@ export function receiveTodoList (data) {
 
 export function getTodoList() {
     return function(dispatch) {
-        return axios.get(`${URL}todolist`)
+        return axios.get(`${URL}todo`)
         .then(res => {
             dispatch(receiveTodoList(res.data));
         });
@@ -33,7 +33,7 @@ export function addTodoList (value) {
     return function(dispatch) {
         return axios({
             method: 'post',
-            url: `${URL}todolist`,
+            url: `${URL}todo`,
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -49,11 +49,12 @@ export function addTodoList (value) {
     }
 }
 
+// { id: 1, name: 'anna', isComplete: true }
 export function toggleTodoList (payload) {
     return function(dispatch) {
         return axios({
             method: 'put',
-            url: `${URL}todolist/${payload.id}`,
+            url: `${URL}todo`,
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -69,7 +70,7 @@ export function delTodoList (id) {
     return function(dispatch) {
         return axios({
             method: 'delete',
-            url: `${URL}todolist/${id}`,
+            url: `${URL}todo/${id}`,
             headers: {
                 'Content-Type': 'application/json'
             }
