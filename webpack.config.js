@@ -32,6 +32,10 @@ module.exports = {
       filepath: './sw.js',
       maximumFileSizeToCacheInBytes: 4194304,
       minify: true,
+      staticFileGlobs: [
+        './index.html',
+        './assets/**/*'
+      ],
       runtimeCaching: [{
         handler: 'networkFirst',
         urlPattern: /^https:\/\/anna-todolist-api\.herokuapp\.com\//,
