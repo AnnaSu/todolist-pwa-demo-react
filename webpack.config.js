@@ -3,7 +3,6 @@ var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = {
   context: __dirname,
-  devtool: '#source-map',
 
   entry: {
     main: path.resolve(__dirname, './src/boot.js'),
@@ -12,7 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './assets'),
     filename: 'bundle.js',
-    publicPath: '/assets/'
+    publicPath: 'todolist-pwa-demo-react/assets/'
   },
 
   module: {
