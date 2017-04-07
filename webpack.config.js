@@ -1,8 +1,9 @@
 var path = require('path');
+var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = {
   context: __dirname,
-  devtool: '#eval-source-map',
+  devtool: '#source-map',
 
   entry: {
     main: path.resolve(__dirname, './src/boot.js'),
@@ -23,5 +24,18 @@ module.exports = {
       },
       exclude: /node_modules/
     }]
-  }
+  },
+  plugins: [
+    new SWPrecacheWebpackPlugin({
+      cacheId: 'todolist',
+      filename: 'sw.js',
+      filepath: './sw.js',
+      maximumFileSizeToCacheInBytes: 4194304,
+      minify: true,
+      runtimeCaching: [{
+        handler: 'fastest',
+        urlPattern: /^https:\/\/anna-todolist-api\.herokuapp\.com\//,
+      }],
+    }),
+  ]
 }
