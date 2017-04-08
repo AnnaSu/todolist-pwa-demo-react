@@ -1,5 +1,6 @@
 var path = require('path');
 var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   context: __dirname,
@@ -25,6 +26,7 @@ module.exports = {
     }]
   },
   plugins: [
+    new CopyWebpackPlugin([{ from: './src/main.css', to: './' }]),
     new SWPrecacheWebpackPlugin({
       cacheId: 'todolist',
       filename: 'sw.js',
