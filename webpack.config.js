@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './assets'),
     filename: 'bundle.js',
-    publicPath: '/todolist-pwa-demo-react/assets/'
+    publicPath: '/assets/'
   },
 
   module: {
