@@ -38,6 +38,3 @@ jspm_packages
 
 sw-generated.js
 sw-generated-webpack.js
-
-assets/*
-sw.js
