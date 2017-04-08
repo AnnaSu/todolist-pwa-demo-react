@@ -39,5 +39,6 @@ jspm_packages
 sw-generated.js
 sw-generated-webpack.js
 
-assets/bundle.js
+assets/*
 
+sw.js
